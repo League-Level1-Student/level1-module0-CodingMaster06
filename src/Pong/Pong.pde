@@ -2,9 +2,8 @@ PImage backgroundImage;
  import ddf.minim.*;  
 Minim minim;
 AudioSample sound;
-
- float xPos = random(500);
- float yPos = random(500);
+ int xPos = (int) random(500);
+ int yPos = (int) random(500);
  float speedx = 5;
  float speedy = 5;
  
@@ -40,4 +39,13 @@ ellipse(xPos, yPos, 100, 100);
   if (yPos <= 0) {
    speedy = 5; 
   }
+  if (intersects (xPos, yPos, mouseX, 480, 70)) {
+    sound.trigger();
+  }
+}
+boolean intersects(int ballX, int ballY, int paddleX, int paddleY, int paddleLength) {
+     if (ballY > paddleY && ballX > paddleX && ballX < paddleX + paddleLength)
+          return true;
+     else 
+          return false;
 }
