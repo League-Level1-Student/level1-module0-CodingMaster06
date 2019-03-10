@@ -23,6 +23,7 @@ public class BodyPartQuiz {
 	String secondImage = "src/leonardo.jpeg";
 	String thirdImage = "src/morgan.jpeg";
 	String fourthImage = "src/jack.jpeg";
+	String fifthImage = "src/THEEND.jpeg";
 	
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -39,17 +40,47 @@ public class BodyPartQuiz {
 
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-
+		if (guess.equals("Link")) {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			score++;
+		
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
-
+		} else {
+			JOptionPane.showMessageDialog(null, "YOU ARE WRONG!!! IT IS MASTER LINK!!");
+		}
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 	    	// 8. Show them their current score
-
+		JOptionPane.showMessageDialog(null, "Your score is " + score + ".");
 		// 9. .... repeat for all your images.....
-
-
+		String guess1 = JOptionPane.showInputDialog("who is this?");
+		if (guess1.equals("Leonardo Dicaprio")) {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			score++;
+		} else {
+			JOptionPane.showMessageDialog(null, "YOU ARE WRONG!!! IT IS LEONARDO DICAPRIO!!!");
+		}
+		JOptionPane.showMessageDialog(null, "your score is " + score + ".");
+		showNextImage();
+		String guess2 = JOptionPane.showInputDialog("who is this?");
+		if (guess2.equals("Morgan Freeman")) {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			score++;
+		} else {
+			JOptionPane.showMessageDialog(null, "YOU ARE WRONG!!! IT IS MORGAN FREEMAN!!!");
+		}
+		JOptionPane.showMessageDialog(null, "your score is " + score + ".");
+		showNextImage();
+		String guess3 = JOptionPane.showInputDialog("who is this?");
+		if (guess3.equals("Jack Black")) {
+			JOptionPane.showMessageDialog(null, "You are correct!");
+			score++;
+		} else {
+			JOptionPane.showMessageDialog(null, "YOU ARE WRONG!!! IT IS JACK BLACK!!!");
+		}
+		JOptionPane.showMessageDialog(null, "your score is " + score + ".");
+		showNextImage();
 	}
 
 	public void showNextImage() {

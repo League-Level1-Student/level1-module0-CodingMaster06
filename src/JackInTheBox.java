@@ -1,11 +1,9 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
 import java.applet.AudioClip;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-
 import javax.print.DocFlavor.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -15,7 +13,24 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class JackInTheBox {
+
+public class JackInTheBox implements ActionListener {
+	public static void main(String[] args) {
+		JackInTheBox JB = new JackInTheBox();
+		JB.createGUI();
+		String open; 
+		String closed;
+	}
+	
+	private void createGUI() {
+		JFrame f = new JFrame();
+		JButton surprise = new JButton();
+		f.setVisible(true);
+		f.add(surprise);
+		surprise.isVisible();
+		surprise.addActionListener(this);
+		f.pack();
+	}
 	private void showPicture(String fileName) { 
 	     try {
 	          JLabel imageLabel = createLabelImage(fileName);
@@ -52,6 +67,12 @@ public class JackInTheBox {
 	     } catch (Exception e) {
 	          e.printStackTrace();
 	     }
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		showPicture("JACKINTHEBOX.jpg");
+		
 	}
 
 }
